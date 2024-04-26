@@ -2,7 +2,7 @@
     Theme Name: MdwiTech
     Theme URI: https://mdwi-tech.com
     Text Domain: MdwiTech
-    Version: 1.0.1
+    Version: 1.7
     Description: MdwiTech is a simple and clean WordPress theme for tech bloggers.
     Author: Marcel Dwi Astika
     Author URI: https://mdwitech.vercel.app
@@ -222,8 +222,10 @@ h6 {
     color: #fff
 }
 .gradient{
-    background: rgb(43,43,43);
-    background: linear-gradient(151deg, var(--orange) 0%, var(--pink) 35%,var(--primary) 100%) !important;
+    background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .content .post .title {
     font-size: 1.275rem
@@ -742,4 +744,12 @@ div.comment:first-of-type {
 .comment-reply-title small a:focus,
 .comment-reply-title small a:hover {
 	text-decoration: underline;
+}
+.wp-block-post-comments ol.commentlist ul.children {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.wp-block-post-comments ol.commentlist li.comment:not(:last-child) {
+	margin-bottom: 1rem;
 }

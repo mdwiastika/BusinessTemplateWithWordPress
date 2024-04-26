@@ -38,3 +38,31 @@ function mdwitech_register_scripts()
     wp_enqueue_script('mdwitech-main', get_template_directory_uri() . '/assets/js/main.js', array(), $version, true);
 }
 add_action('wp_enqueue_scripts', 'mdwitech_register_scripts');
+
+function mdwitech_widget_areas()
+{
+    register_sidebar(
+        array(
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+            'before_widget' => '<ul class="social-list list-inline py-3 mx-auto">',
+            'after_widget' => '</ul>',
+            'name' => 'Sidebar Area',
+            'id' => 'sidebar-1',
+            'description' => 'Sidebar Widget Area'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget' => '</div>',
+            'name' => 'Footer Area',
+            'id' => 'footer-1',
+            'description' => 'Footer Widget Area'
+        )
+    );
+}
+add_action('widgets_init', 'mdwitech_widget_areas');

@@ -14,7 +14,7 @@
 
 <body>
     <header class="header text-center pt-3">
-        <a class="site-title pt-lg-4 mb-0" href="index.html"><?= get_bloginfo(); ?></a>
+        <a class="site-title pt-lg-4 mb-0" href="/"><?= get_bloginfo(); ?></a>
 
         <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -42,13 +42,11 @@
                 );
                 ?>
                 <hr>
-                <ul class="social-list list-inline py-3 mx-auto">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
-                </ul>
+                <?php
+                if (is_active_sidebar('sidebar-1')) {
+                    dynamic_sidebar('sidebar-1');
+                }
+                ?>
 
             </div>
         </nav>
