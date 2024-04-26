@@ -1,5 +1,14 @@
 <?php
 
+
+function mdwitech_theme_support()
+{
+    add_theme_support('title-tag');
+    add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'mdwitech_theme_support');
+
 function mdwitech_menus()
 {
     $locations = array(
@@ -10,12 +19,6 @@ function mdwitech_menus()
     register_nav_menus($locations);
 }
 add_action('init', 'mdwitech_menus');
-
-function mdwitech_theme_support()
-{
-    add_theme_support('title-tag');
-}
-add_action('after_setup_theme', 'mdwitech_theme_support');
 
 function mdwitech_enqueue_styles()
 {
